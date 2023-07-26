@@ -1,0 +1,1 @@
+insert into movies(title, year, director_id, description) values('GodFather', 1976, 3, 'Mafia');
