@@ -7,16 +7,15 @@ services:
     image: movies_api
     command: "/movies-api -b ${BIND_IP} -p ${BIND_PORT}"
     environment:
-      - POSTGRES_SERVER
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
+      - POSTGRES_SERVER
       - POSTGRES_PORT
       - BIND_IP
       - BIND_PORT
     expose:
       - ${BIND_PORT}
-      - ${POSTGRES_PORT}
     ports:
       - ${BIND_PORT}:${BIND_PORT}
     depends_on:
@@ -25,9 +24,7 @@ services:
   postgres:
     image: postgres:15.3
     restart: always
-    container_name: postgres
     environment:
-      - POSTGRES_SERVER
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
