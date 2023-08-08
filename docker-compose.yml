@@ -11,10 +11,11 @@ services:
       - movies-api
     environment:
       - PORT=${REACT_PORT}
+      - REACT_APP_API_URI
     expose:
       - ${REACT_PORT}
     ports:
-      - ${REACT_PORT}:${REACT_PORT}
+      - "${REACT_PORT}:${REACT_PORT}"
    
   movies-api:
     container_name: movies_api_container
